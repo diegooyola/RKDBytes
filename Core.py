@@ -75,7 +75,7 @@ elif modo == "Subir contenido":
     tags = st.multiselect("Tags", options=[_[0] for _ in TAGS.values])
     path = file_selector()
 
-    base = open("C:/Users/Agustin/PycharmProjects/RockingDataBytes/{}.py".format(nombre), "w", encoding="utf-8")
+    base = open(os.getcwd() + "/{}.py".format(nombre), "w", encoding="utf-8")
     base.write("import streamlit as st\nwith st.echo():\n")
     base.close()
 
@@ -88,7 +88,7 @@ elif modo == "Subir contenido":
 
         temp = open(path, "r", encoding="utf-8")
 
-        base_ = open("C:/Users/Agustin/PycharmProjects/RockingDataBytes/{}.py".format(nombre), "a", encoding="utf-8")
+        base_ = open(os.getcwd() + "/{}.py".format(nombre), "a", encoding="utf-8")
         for line in temp:
             base_.write("\t"+line)
 
@@ -146,6 +146,8 @@ else:
 
 #        TAGS = pd.read_csv("./TAGS.csv", index_col=0)
 #        st.write(TAGS)
+
+
 
 
 
